@@ -1,0 +1,60 @@
+:root {
+    --prim: #0fa3b1;
+    --sec: #fff;
+    --ter: #000;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header, footer {
+    background-color: var(--prim);
+    color: var(--sec);
+    padding: 1rem;
+    display: flex;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+header {
+    justify-content: space-between;
+    align-items: center;
+}
+footer {
+    justify-content: center;
+}
+ nav a {
+    text-decoration: none;
+    color: var(--sec);
+    padding: 1rem;
+ }
+
+nav a:hover {
+    background-color: var(--sec);
+    color: var(--ter);
+    border-radius: 20px;
+}
+
+main {
+    padding: 1rem;
+}
+
+#jumbo {
+    width: 100%;
+    height: 200px;
+    object-fit: fill;
+}
+
+h1 {
+    text-align: center;
+    background-color: var(--prim);
+    color: var(--sec);
+    margin: 1rem;
+}
