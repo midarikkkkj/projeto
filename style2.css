@@ -12,29 +12,34 @@
     font-family: sans-serif;
 }
 
-header, footer {
+header,
+footer {
     background-color: var(--prim);
     color: var(--sec);
     padding: 1rem;
     display: flex;
 }
+
 .logo {
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
+
 header {
     justify-content: space-between;
     align-items: center;
 }
+
 footer {
     justify-content: center;
 }
- nav a {
+
+nav a {
     text-decoration: none;
     color: var(--sec);
     padding: 1rem;
- }
+}
 
 nav a:hover {
     background-color: var(--sec);
@@ -106,4 +111,46 @@ h1 {
 .tex-detalhe {
     width: 50%;
     padding: 1rem;
+}
+
+form {
+    background-color: var(--prim);
+    color: var(--sec);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-item {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.form-item input{
+    border-radius: 8px;
+    padding: 0.5rem;
+    border: none;
+    width: 75%;
+}
+
+button {
+    background-color: var(--sec);
+    color: var(--prim);
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin: 1rem;
+    border: 1px solid var(--prim);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--prim);
+    color: var(--sec);
+    border: 1px solid var(--ter);
 }
