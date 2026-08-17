@@ -132,7 +132,7 @@ form {
     width: 100%;
 }
 
-.form-item input{
+.form-item input {
     border-radius: 8px;
     padding: 0.5rem;
     border: none;
@@ -154,26 +154,54 @@ button:hover {
     color: var(--sec);
     border: 1px solid var(--ter);
 }
+#form2 {
+    width: 100%;
+    max-width: 500px;
+    min-width: 280px;
+    box-sizing: border-box;
+}
+#form2 {
+    background-color: #3b48f8;
+    color: #000;
+}
+
+#body2 {
+    background-image: url(gatinho.jpg);
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .card-container {
         grid-template-columns: repeat(1, 1fr);
     }
+
     header {
         flex-direction: column;
     }
-    nav{
+
+    nav {
         display: flex;
         flex-direction: column;
-}-
+    }
+
+    form {
+        width: revert;
+    }
+
+}
+
 @media only screen and (min-width: 600px) and (max-width: 900px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-    
-@media only screen and (min-width:900px) (max-width: 1200px) {
+
+@media only screen and (min-width:900px) and (max-width: 1200px) {
     .card-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
