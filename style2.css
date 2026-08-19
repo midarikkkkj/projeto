@@ -108,6 +108,7 @@ h1 {
     align-items: center;
 }
 
+
 .tex-detalhe {
     width: 50%;
     padding: 1rem;
@@ -171,6 +172,13 @@ button:hover {
     background-attachment: scroll;
 }
 
+#main2 {
+    flex-direction: column;
+}
+
+img {
+    width: 100%;
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -194,6 +202,7 @@ button:hover {
     #main2 {
         width: revert;
     }
+
 
 }
 
