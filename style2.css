@@ -180,6 +180,11 @@ img {
     width: 100%;
 }
 
+#olho_fechado {
+    height: 50px;
+    width: 50px;
+}
+
 
 @media only screen and (max-width: 600px) {
     .card-container {
@@ -231,4 +236,6 @@ img {
         width: revert;
     }
 }
+
+
 
