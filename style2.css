@@ -211,6 +211,15 @@ img {
 
 }
 
+#container-perfil {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto;
+    width: 50%;
+    border: 1px solid black;
+    padding: 1rem;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 900px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr);
