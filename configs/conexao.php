@@ -19,3 +19,4 @@ class Conexao{
         return $conn;
     }
 }
+.
