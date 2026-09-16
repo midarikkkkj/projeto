@@ -31,4 +31,4 @@ INSERT INTO categoria (nome) VALUES ("romance"), ("terror"), ('fantasia');
 INSERT INTO livro(titulo, ano_pub, autor, resumo, id_categoria)
 VALUES ("orgulho e preconteiro", "1813", "jane austin", "lorem ipsum", 1), 
 ("orgulho e preconteiro", "1813", "jane austin", "lorem ipsum", 2), ("orgulho e preconteiro", "1813", "jane austin", "lorem ipsum", 3)
-.
+..
