@@ -1,9 +1,8 @@
 <?php
 require_once __DIR__ . "/templates/_cabecalho.php";
+require_once __DIR__ . "/models/livro.php";
 
-$conn = new PDO("mysql:host=localhost;dbname=biblioteca;charset=utf8mb4" , "root" , "");
-$query = "SELECT * FROM livro";
-$resultado = $conn->query($query)->fetchALL();
+$resultado = Livro::listar();
 
 
 ?>
@@ -15,35 +14,33 @@ $resultado = $conn->query($query)->fetchALL();
     <button id="teste">CLIQUE AQUI</button>
     <h1>BIBLIOTECA</h1>
 
-    <?php if(count($resultado) == 0): ?>
-        <p> nenhum livro encontrado </p> 
+    <?php if (count($resultado) == 0): ?>
+        <p> nenhum livro encontrado </p>
+    <?php else: ?>
+        <div class="card-container">
+            <?php foreach ($resultado as $livro): ?>
+            <a href="/projeto/views/livro/detalhes.php?id=<?= $livro['id_livro'] ?>">
+                <div class="card">
 
-    <div class="card-container">
-        <? foreach($resultado as $livro): ?>
-        <a href="/projeto/views/livro/detalhes.php?id=<?= /4livro ['id_livro'] ?>>
-            <div class="card">
+                    <div class="card-img">
+                        <?php if ($livro['capa'] == null): ?>
+                            <img src="/projeto/img/capa/gatinho.jpg" alt="">
+                        <?php else: ?>
+                            <img src="/projeto/img/capa/uploads/<?= $livro['capa'] ?>" alt="">
+                        <?php endif; ?>
+                    </div>
+                    <div class="card-text">
+                        <h2><?= $livro['titulo'] ?></h2>
 
-                <div class="card-img">
-                    <?php if($livro['capa']==null):?>
-                        <img src="https://picsum.photos/200" alt="">
-                    <?php else: ?>
-                        <img src="/projeto/img/gatinho.jpg/<? =$livro
-                    <?php endif; ?>
+                    </div>
                 </div>
-                <div class="card-text">
-                    <h2><?= $livro['titulo']?></h2>
-
-                </div>
-            </div>
-        </a>
-        <? endforeach; ?>
-    </div>
-
+            </a>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 </main>
+
+
 <?php
 require_once __DIR__ . "/templates/_rodape.php";
 ?>
-</body>
-
-</html>
-..

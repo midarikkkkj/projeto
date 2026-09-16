@@ -1,4 +1,5 @@
 CREATE DATABASE IF NOT EXISTS biblioteca;
+
 USE biblioteca;
 
 CREATE TABLE IF NOT EXISTS categoria (
@@ -10,10 +11,10 @@ CREATE TABLE IF NOT EXISTS livro (
     id_livro INT PRIMARY KEY AUTO_INCREMENT ,
     titulo VARCHAR(255) NOT NULL,
     ano_pub VARCHAR(4),
-    autor(255),
+    autor VARCHAR(255),
     resumo TEXT,
     capa VARCHAR(255),
-    id_categoria INT
+    id_categoria INT,
     FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria)
 );
 
@@ -25,10 +26,9 @@ CREATE TABLE IF NOT EXISTS usuario (
     foto VARCHAR(255)
 );
 
---seed
+-- seed
 INSERT INTO categoria (nome) VALUES ("romance"), ("terror"), ('fantasia');
 
 INSERT INTO livro(titulo, ano_pub, autor, resumo, id_categoria)
 VALUES ("orgulho e preconteiro", "1813", "jane austin", "lorem ipsum", 1), 
 ("orgulho e preconteiro", "1813", "jane austin", "lorem ipsum", 2), ("orgulho e preconteiro", "1813", "jane austin", "lorem ipsum", 3)
-..

@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>biblioteca</title>
-    <link rel="stylesheet" href="style2.css">
-    <script src="/projeto/js/script.js" href="/projeto/css/style2.css" defer></script>
+    <link rel="stylesheet" href="/projeto/css/style2.css">
 
 </head>
 

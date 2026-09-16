@@ -1,11 +1,9 @@
-<? php 
-
+<?php
 require_once __DIR__ . "/../configs/conexao.php";
-require_once __DIR__ . "/models/livro.php";
 
-$resultado = Livro::listar();
 
-class Livro {
+class Livro
+{
     private $id_livro;
     private $titulo;
     private $ano_pub;
@@ -15,17 +13,29 @@ class Livro {
     private $categoria;
 
 
-    public static function listar(){
+    public static function listar()
+    {
         try {
             $conexao = Conexao::conectar();
-            $q = "SELECT * FROM livro WHERE id_livro = id";
-            $statement = $conexao->prepare($sql);
-            $smtt->bindValue(':id', $id);
-            $smtt->execute();
-            return $smtt->fetchALL();
+            $sql = "SELECT * FROM livro";
+            $stmt = $conexao->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchALL();
         } catch (PDOException $e) {
-            echo 'Erro ao buscar livros: ' . $e->getMenssage();
+            echo 'Erro ao buscar livros: ' . $e->getMessage();
+        }
+    }
+
+    public static function buscarPorId($id){
+        try {
+            $conexao = Conexao::conectar();
+            $sql = "SELECT livro.*, categoria.nome FROM livro JOIN categoria ON livro.id_categoria = categoria.id_categoria WHERE livro.id_livro = :id ";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute();
+            return $stmt->fetch();
+        } catch (PDOException $e) {
+            echo 'Erro ao buscar livros: ' . $e->getMessage();
         }
     }
 }
-..
