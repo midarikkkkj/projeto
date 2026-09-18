@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../templates/_cabecalho.php";
     <h1>perfil</h1>
     <div class="container-perfil">
         <div class="itens-perfil">
-            <p>nome da pessoa </p>
+            <p><?= $_SESSION['nome'] ?></p>
             <p>pao@email.com</p>
         </div>
         <div class="itens-perfil">

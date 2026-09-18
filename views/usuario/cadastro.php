@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../../templates/_cabecalho.php";
 ?>
 <main class="main-detalhe">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="/projeto/controllers/usuario_add_controller.php" method="post" enctype="multipart/form-data">
         <img src="https://picsum.photos/100" alt="" class="logo">
         <div class="form-item">
             <label for="nome">nome</label>

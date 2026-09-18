@@ -14,7 +14,7 @@ $livro = Livro::buscarPorId($id);
             <img src="/projeto/img/capa/uploads/<?= $livro['capa'] ?>" alt="">
         <?php endif; ?>
 
-    </div>
+    </div>  
     <div id="texto-detalhe">
         <h2><?= $livro['titulo'] ?></h2>
         <br>
