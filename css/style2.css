@@ -185,6 +185,17 @@ img {
     width: 50px;
 }
 
+.avisos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--prim);
+    color: var(--sec);
+    margin: 1rem;
+    border-radius:10 px;
+}
+
 
 @media only screen and (max-width: 600px) {
     .card-container {

@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/../../templates/_cabecalho.php";
+require_once __DIR__ . "/../../models/categoria.php";
 ?>
 <main class="container-centraliza" id="glivros">
     <a href="gerenciar_livros.php"></a>

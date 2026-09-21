@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../auth/autenticacao.php";
 session_start();
 ?>
 
@@ -20,9 +21,17 @@ session_start();
 
         <nav>
             <a href="/projeto/index.php">inicio</a>
+            <?php if(!Autenticacao::estaAutenticado()): ?>
+
             <a href="/projeto/views/usuario/cadastro.php">cadastro</a>
             <a href="/projeto/views/usuario/login.php">entrar</a>
+            <?php else: ?>
+
             <a href="/projeto/views/usuario/perfil.php">perfil</a>
+            <a href="/projeto/controllers/logout_controller.php">sair</a>
+            <?php endif; ?>
         </nav>
     </header>
-    ..
+    <?php 
+    require_once __DIR__ . "_Aavisos.php";
+    ?>
