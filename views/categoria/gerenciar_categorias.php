@@ -14,8 +14,8 @@ require_once __DIR__ . "/../../templates/_cabecalho.php";
         <?php foreach ($resultado as $categoria): ?>
             <tr>
                 <td><?= $categoria['nome'] ?></td>
-                <td>editar</td>
-                <td>deletar</td>
+                <td><a href="">editar</a></td>
+                <td><a href="">deletar</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

@@ -16,4 +16,17 @@ class Categoria {
             echo $e->getMessage();
         }
     }
+
+    public function inserir($nome){
+        try {
+            $conexao = Conexao::conectar();
+            $sql = "INSERT INTO categora (nome) VALUES (:nome)";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(':nome', $nome);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 }
+
