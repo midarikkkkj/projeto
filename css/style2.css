@@ -196,6 +196,11 @@ img {
     border-radius:10 px;
 }
 
+.gerenciar_categorias {
+    
+}
+
+
 
 @media only screen and (max-width: 600px) {
     .card-container {

@@ -1,0 +1,29 @@
+<?php
+require_once __DIR__ . "/../../templates/_cabecalho.php";
+require_once __DIR__ ."/../../models/categoria.php";
+
+$id = $_GET['id'];
+
+$categoria = new Categoria;
+$categoria->carregar($id);
+
+?>
+
+<main class="main-detalhe">
+    <form action="/projeto/controllers/categoria_editar_controller.php" method="post" enctype="multpart/form-data">
+        <div class="form-item">
+            <label for="nome">Nome da categoria</label>
+            <input type="text" name="nome" id="nome" value="<?= $categoria->getNome() ?>">
+        </div>
+
+        <input type="hidden" name="id" value="<?= $categoria->getNome() ?>">
+    
+    <button type="submit">atualizar</button>
+    </form>
+
+</main>
+</body>
+
+<?php
+require_once __DIR__ . "/../../templates/_rodape.php";
+?>
