@@ -10,13 +10,13 @@ $categoria->carregar($id);
 ?>
 
 <main class="main-detalhe">
-    <form action="/projeto/controllers/categoria_editar_controller.php" method="post" enctype="multpart/form-data">
+    <form action="/projeto/controllers/categoria_edit_controller.php" method="post" enctype="multpart/form-data">
         <div class="form-item">
             <label for="nome">Nome da categoria</label>
             <input type="text" name="nome" id="nome" value="<?= $categoria->getNome() ?>">
         </div>
 
-        <input type="hidden" name="id" value="<?= $categoria->getNome() ?>">
+        <input type="hidden" name="id" value="<?= $categoria->getId() ?>">
     
     <button type="submit">atualizar</button>
     </form>

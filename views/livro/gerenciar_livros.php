@@ -1,29 +1,29 @@
 <?php
 require_once __DIR__ . "/../../templates/_cabecalho.php";
 require_once __DIR__ . "/../../models/categoria.php";
+
+$resultado = Categoria::listar();
+
 ?>
-<main class="container-centraliza" id="glivros">
-    <a href="gerenciar_livros.php"></a>
-    <h1>gerenciar livros</h1>
-    <div class="container-glivros">
-        <div class="itens-glivros">
-            <h2>titulo</h2>
-            <p>lalala</p>
-            <h2>ano</h2>
-            <p>2026</p>
-            <h2>categoria</h2>
-            <p>categoria 1</p>
-            <h2>opções</h2>
-        </div>
-        <div class="itens-glivros">
-            <a href="">editar</a>
-            <buton onclick="deletarelemento()">deletar</buton>
-        </div>
-    </div>
+
+<main class="container-centraliza">
+    <a href="/projeto/views/categoria/cadastro_categoria.php" class="link-btn">Adicionar Categoria</a>
+    <table>
+        <tr>
+            <th>Nome da Categoria</th>
+            <th colspan="2">Opções</th>
+        </tr>
+
+        <?php foreach ($resultado as $categoria): ?>
+            <tr>
+                <td><?= $categoria['nome'] ?></td>
+                <td><a href="/projeto/views/categoria/editar_categoria.php?id=<?= $categoria['id_categoria'] ?>">Editar</a></td>
+                <td><a href="/projeto/controllers/categoria_del_controller.php?id=<?= $categoria['id_categoria'] ?>" onclick="return confirm('Tem certeza que deseja deletar esta categoria?')">Deletar</a></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </main>
+
 <?php
 require_once __DIR__ . "/../../templates/_rodape.php";
 ?>
-</body>
-
-</html>

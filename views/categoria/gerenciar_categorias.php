@@ -9,7 +9,7 @@ $resultado = Categoria::listar();
     <a href="/projeto/views/categoria/cadastro_categoria.php" class="link-btn">adicionar categoria</a>
 
 
-    <table class="table table-blue table-striped">
+    <table class="table table-dark table-striped">
         <tr>
             <th>nome da categoria</th>
             <th colspan="2">opçoes</th>

@@ -27,11 +27,13 @@ class Autenticacao
 
     header("location: /projeto/views/usuario/login.php");
     exit();
-
-    $_SESSION['aviso'] = "email ou enha invalidos";
+    
+    $_SESSION['aviso'] = "email ou senha invalidos";
     header("Location: /projeto/views/usuario/login.php");
     exit();
   }
+
+
 
   public static function estaAutenticado()
   {

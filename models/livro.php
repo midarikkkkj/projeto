@@ -26,7 +26,8 @@ class Livro
         }
     }
 
-    public static function buscarPorId($id){
+    public static function buscarPorId($id)
+    {
         try {
             $conexao = Conexao::conectar();
             $sql = "SELECT livro.*, categoria.nome FROM livro JOIN categoria ON livro.id_categoria = categoria.id_categoria WHERE livro.id_livro = :id ";
@@ -39,42 +40,73 @@ class Livro
         }
     }
 
-    public function inserir($nome){
+    public function inserir($titulo, $autor, $ano_pub, $resumo, $capa, $categoria)
+    {
         try {
             $conexao = Conexao::conectar();
-            $sql = "INSERT INTO livro (nome) VALUES (:nome)";
+            $sql = "INSERT INTO livro (titulo, autor, ano_pub, resumo, capa, id_categoria) VALUES (:titulo, :autor, :ano_pub, :resumo, :capa, :categoria)";
             $stmt = $conexao->prepare($sql);
-            $stmt->bindValue(':nome', $nome);
+            $stmt->bindValue(':titulo', $titulo);
+            $stmt->bindValue(':autor', $autor);
+            $stmt->bindValue(':ano_pub', $ano_pub);
+            $stmt->bindValue(':resumo', $resumo);
+            $stmt->bindValue(':capa', $capa);
+            $stmt->bindValue(':categoria', $categoria);
             $stmt->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public function carregar($id){
+    public function deletar($id)
+    {
         try {
             $conexao = Conexao::conectar();
-            $sql = "SELECT * FROM livro JOIN categoria ON livro.id_categoria = categoria.id_categoria WHERE livro.id_livro = :id ";
+            $sql = "DELETE FROM livro WHERE id_livro = :id";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute();
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function carregar($id)
+    {
+        try {
+            $conexao = Conexao::conectar();
+            $sql = "SELECT * FROM livro WHERE id_livro = :id";
             $stmt = $conexao->prepare($sql);
             $stmt->bindValue(':id', $id);
             $stmt->execute();
             $resultado = $stmt->fetch();
 
-            if ($resultado['nome']);
-            $this->id_livro = $resultado['id_livro'];
-            $this->id_livro = $resultado['nome'];
+            if ($resultado['nome']) {
+                $this->id_livro = $resultado['id_livro'];
+                $this->titulo = $resultado['titulo'];
+                $this->ano_pub = $resultado['ano_pub'];
+                $this->capa = $resultado['capa'];
+                $this->autor = $resultado['autor'];
+                $this->categoria = $resultado['id_categoria'];
+            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
-    public function atualizar($nome, $id) {
+
+    public function atualizar($titulo, $autor, $ano_pub, $resumo, $capa, $categoria, $id)
+    {
         try {
             $conexao = Conexao::conectar();
-            $sql = "UPDATE livro SET nome = :nome WHERE livro.id_livro = :id ";
+            $sql = "UPDATE livro SET titulo = :titulo, autor = :autor, ano_pub = :ano_pub, resumo = :resumo, capa = :capa, categoria = :id_categoria, id = :id WHERE id_livro = :id";
             $stmt = $conexao->prepare($sql);
-            $stmt->bindValue(':nome' , $nome);
-            $stmt->bindValue(':id' , $id);
-            $stmt->execute();
+            $stmt->bindValue(':titulo', $titulo);
+            $stmt->bindValue(':autor', $autor);
+            $stmt->bindValue(':ano_pub', $ano_pub);
+            $stmt->bindValue(':resumo', $resumo);
+            $stmt->bindValue(':capa', $capa);
+            $stmt->bindValue(':categoria', $categoria);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute(); 
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

@@ -180,9 +180,10 @@ img {
     width: 100%;
 }
 
-#olho_fechado {
-    height: 50px;
-    width: 50px;
+.itens-perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
 }
 
 .avisos {
@@ -196,9 +197,6 @@ img {
     border-radius:10 px;
 }
 
-.gerenciar_categorias {
-    
-}
 
 
 

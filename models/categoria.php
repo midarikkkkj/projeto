@@ -55,33 +55,36 @@ class Categoria
             $stmt->execute();
             $resultado = $stmt->fetch();
 
-            if ($resultado['nome']);
-            $this->id_categoria = $resultado['id_categoria'];
-            $this->nome = $resultado['nome'];
+            if ($resultado['nome']) {
+                $this->id_categoria = $resultado['id_categoria'];
+                $this->nome = $resultado['nome'];
+            }
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
-
     }
 
-    public function atualizar($nome, $id) {
+    public function atualizar($nome, $id)
+    {
         try {
             $conexao = Conexao::conectar();
             $sql = "UPDATE categoria SET nome = :nome WHERE id_categoria = :id";
             $stmt = $conexao->prepare($sql);
-            $stmt->bindValue(':nome' , $nome);
-            $stmt->bindValue(':id' , $id);
+            $stmt->bindValue(':nome', $nome);
+            $stmt->bindValue(':id', $id);
             $stmt->execute();
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
 
-    public function getId(){
+    public function getId()
+    {
         return $this->id_categoria;
     }
 
-    public function getNome(){
+    public function getNome()
+    {
         return $this->nome;
     }
 }

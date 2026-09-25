@@ -19,22 +19,22 @@ $resultado = Livro::listar();
     <?php else: ?>
         <div class="card-container">
             <?php foreach ($resultado as $livro): ?>
-            <a href="/projeto/views/livro/detalhes.php?id=<?= $livro['id_livro'] ?>">
-                <div class="card">
+                <a href="/projeto/views/livro/detalhes.php?id=<?= $livro['id_livro'] ?>">
+                    <div class="card">
 
-                    <div class="card-img">
-                        <?php if ($livro['capa'] == null): ?>
-                            <img src="/projeto/img/capa/gatinho.jpg" alt="">
-                        <?php else: ?>
-                            <img src="/projeto/img/capa/uploads/<?= $livro['capa'] ?>" alt="">
-                        <?php endif; ?>
-                    </div>
-                    <div class="card-text">
-                        <h2><?= $livro['titulo'] ?></h2>
+                        <div class="card-img">
+                            <?php if ($livro['capa'] == null): ?>
+                                <img src="/projeto/img/capa/gatinho.jpg" alt="">
+                            <?php else: ?>
+                                <img src="/projeto/img/capa/gatodog.jpg.jpg/<?= $livro['capa'] ?>" alt="">
+                            <?php endif; ?>
+                        </div>
+                        <div class="card-text">
+                            <h2><?= $livro['titulo'] ?></h2>
 
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
