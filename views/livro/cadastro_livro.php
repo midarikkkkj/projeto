@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . "/../../templates/---------_cabecalho.php";
+require_once __DIR__ . "/../../templates/_cabecalho.php";
+require_once __DIR__ . "/../../models/categoria.php";
+
+$categorias= Categoria::listar();
 ?>
 <main class="main-detalhe">
     <form action="" method="post" enctype="multipart/form-data">
@@ -32,7 +35,11 @@ require_once __DIR__ . "/../../templates/---------_cabecalho.php";
             </select>
         </div>
 
-
+        <div class="form-item">
+        <label for="capa">capa</label>
+        <input type="file" name="capa" id="capa">
+        </div>
+       
         <button type="submit">cadastrar</button>
 
     </form>

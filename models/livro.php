@@ -17,7 +17,7 @@ class Livro
     {
         try {
             $conexao = Conexao::conectar();
-            $sql = "SELECT * FROM livro";
+            $sql = "SELECT livro.*, categoria.nome FROM livro JOIN categoria ON livro.id_categoria = categoria.id_categoria";
             $stmt = $conexao->prepare($sql);
             $stmt->execute();
             return $stmt->fetchALL();
