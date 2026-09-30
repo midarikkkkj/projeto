@@ -26,7 +26,7 @@ $resultado = Livro::listar();
                             <?php if ($livro['capa'] == null): ?>
                                 <img src="/projeto/img/capa/gatinho.jpg" alt="">
                             <?php else: ?>
-                                <img src="/projeto/img/capa/gatodog.jpg.jpg/<?= $livro['capa'] ?>" alt="">
+                                <img src="/projeto/img/capa/uploads/<?= $livro['capa'] ?>" alt="">
                             <?php endif; ?>
                         </div>
                         <div class="card-text">
