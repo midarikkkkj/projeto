@@ -14,7 +14,7 @@ if (!empty($FILES['foto']['name'])) {
     $caminho = __DIR__ . "/..imgs/fotos/uploads" . $nomedafoto;
     move_uploaded_file($foto['tmp_name'], $caminho);
 } else {
-    $foto = null;
+    $nomedafoto = null;
 }
 
 //criar um objeto do tipo usuario para usar o inserir 

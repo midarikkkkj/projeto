@@ -2,7 +2,7 @@
 require_once __DIR__ . "/../../templates/_cabecalho.php";
 ?>
 <main class="main-login">
-    <form action="/projeto/controllers/login_controller.php" method="post" enctype="multipart/form-data" id="form2">
+    <form action="/projeto/controllers/login_controller.php" method="post" enctype="multipart/form-data">
         <img src="https://picsum.photos/100" alt="" class="logo">
 
         <div class="form-item">
@@ -17,7 +17,8 @@ require_once __DIR__ . "/../../templates/_cabecalho.php";
         </div>
 
         <button type="submit">Entrar</button>
-
+        
+        <a href="">Esqueceu a senha?</a>
     </form>
 
 </main>

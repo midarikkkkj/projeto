@@ -10,9 +10,9 @@ require_once __DIR__ . "/../../templates/_cabecalho.php";
         </div>
         <div class="itens-perfil">
             <?php if ($_SESSION['foto'] == null): ?>
-                <img src="/biblioteca/imgs/fotos/generica_perfil.png" alt="">
+                <img src="/projeto/img/capa/gatodog.jpg" alt="">
             <?php else: ?>
-                <img src="/biblioteca/imgs/fotos/uploads/<?= $_SESSION['foto'] ?>" alt="">
+                <img src="/projeto/img/capa/uploads/<?= $_SESSION['foto'] ?>" alt="">
             <?php endif; ?>
         </div>
         <div class="itens-perfil">

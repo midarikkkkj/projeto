@@ -5,7 +5,7 @@ require_once __DIR__ . "/../../models/categoria.php";
 $categorias= Categoria::listar();
 ?>
 <main class="main-detalhe">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="/projeto/controllers/livro_add_controller.php" method="post" enctype="multipart/form-data">
         <div class="form-item">
             <label for="titulo">titulo</label>
             <input type="text" name="titulo" id="titulo">
@@ -30,8 +30,9 @@ $categorias= Categoria::listar();
         <div class="form-item">
             <label for="categoria">categoria</label>
             <select type="text" name="categoria" id="categoria">
-                <option value="categoria1">categoria 1</option>
-                <option value="categoria2">categoria 2</option>
+                <?php foreach($categorias as $c): ?>
+                <option value="<?= $c['id_categoria'] ?>"?><?= $c['nome'] ?></option>
+                <?php endforeach; ?>
             </select>
         </div>
 

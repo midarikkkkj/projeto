@@ -23,9 +23,9 @@ if(!$livro) {
 
     <div id="img-detalhe">
         <?php if ($livro['capa'] == null): ?>
-            <img src="/projeto/imgs/capas/generica.png" alt="">
+            <img src="/projeto/img/capa/gatodog.jpg" alt="">
         <?php else: ?>
-            <img src="/projeto/imgs/capas/uploads/<?= $livro['capa'] ?>" alt="">
+            <img src="/projeto/img/capa/uploads/<?= $livro['capa'] ?>" alt="">
         <?php endif; ?>
     </div>
 
