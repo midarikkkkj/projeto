@@ -111,4 +111,46 @@ class Livro
             echo $e->getMessage();
         }
     }
+
+    public function atualizarSemCapa($titulo, $autor, $ano_pub, $resumo, $categoria, $id)
+    {
+        try {
+            $conexao = Conexao::conectar();
+            $sql = "UPDATE livro SET titulo = :titulo, autor = :autor, ano_pub = :ano_pub, resumo = :resumo, categoria = :id_categoria, id = :id WHERE id_livro = :id";
+            $stmt = $conexao->prepare($sql);
+            $stmt->bindValue(':titulo', $titulo);
+            $stmt->bindValue(':autor', $autor);
+            $stmt->bindValue(':ano_pub', $ano_pub);
+            $stmt->bindValue(':resumo', $resumo);
+            $stmt->bindValue(':categoria', $categoria);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute(); 
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    public function getId() {
+        return $this->id_livro;
+    }
+
+    public function getTitulo() {
+        return $this->titulo;
+    }
+
+    public function getAutor() {
+        return $this->autor;
+    }
+
+    public function getAno() {
+        return $this->ano_pub;
+    }
+
+    public function getResumo() {
+        return $this->resumo;
+    }
+
+    public function getCategoria() {
+        return $this->categoria;
+    }
 }

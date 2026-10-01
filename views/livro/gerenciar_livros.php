@@ -18,8 +18,8 @@ $livros = Livro::listar();
             <td><?=  $l['titulo'] ?></td>
             <td><?=  $l['ano_pub'] ?></td>
             <td><?=  $l['nome'] ?></td>
-            <td>Editar</td>
-            <td>Deletar</td>
+            <td><a href="/projeto/views/livro/editar_livro.php">Editar</a></td>
+            <td><a href="/projeto/controllers/livro_del_controller.php">Deletar</a></td>
         </tr>
         <?php endforeach; ?>
     </table>
